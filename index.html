@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="Love Coupons — a little book of promises, redeemable any time, kept just for Mena.">
+  <title>Love Coupons ✦ Love for Mena</title>
+  <link rel="canonical" href="https://menaammarpro.github.io/love-coupons/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Love Coupons — for Mena">
+  <meta property="og:title" content="Love Coupons ✦ Love for Mena">
+  <meta property="og:description" content="A little book of promises, redeemable any time.">
+  <meta property="og:url" content="https://menaammarpro.github.io/love-coupons/">
+  <meta property="og:image" content="https://menaammarpro.github.io/love-coupons/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Love Coupons — promises redeemable any time">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Love Coupons ✦ Love for Mena">
+  <meta name="twitter:description" content="A little book of promises, redeemable any time.">
+  <meta name="twitter:image" content="https://menaammarpro.github.io/love-coupons/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Love Coupons">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">♥ Love Coupons</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#coupons">The coupons</a>
+      <a href="#make">Make one</a>
+      <a href="#details">Details</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero coupon-hero">
+      <p class="eyebrow">PROMISES, WRITTEN DOWN</p>
+      <div class="moon" aria-hidden="true">♥</div>
+      <p class="small-caption">Redeem any time. No expiry, ever.</p>
+      <h1>Love <span>coupons.</span></h1>
+      <p class="hero-description">
+        A little book of things I owe you — small ones and big ones. Pick a
+        coupon whenever you like and it's yours, no questions asked. I'll add
+        more as I think of them.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#coupons">Open the book <span>♥</span></a>
+        <a class="button button-ghost" href="#make">Make a new one</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="coupons">
+      <p class="eyebrow">THE BOOK</p>
+      <h2>Our <span>coupons.</span></h2>
+      <p class="section-copy">Tap a coupon to redeem it. Tap again to put it back — nothing is ever spent for good.</p>
+      <div class="coupon-meta">
+        <span class="coupon-chip"><strong id="coupon-total">0</strong> in the book</span>
+        <span class="coupon-chip"><strong id="coupon-redeemed">0</strong> redeemed</span>
+      </div>
+      <div class="coupon-grid" id="coupon-grid"></div>
+      <p class="section-note" id="coupon-note" aria-live="polite"></p>
+    </section>
+
+    <section class="section" id="make">
+      <p class="eyebrow">WRITE YOUR OWN</p>
+      <h2>Make a <span>coupon.</span></h2>
+      <p class="section-copy">Something you'd like me to owe you? Write it down and it joins the book.</p>
+      <div class="make-form">
+        <label class="field">
+          <span>Coupon title</span>
+          <input type="text" id="new-title" maxlength="60" placeholder="A surprise date, one day" aria-label="Coupon title">
+        </label>
+        <label class="field">
+          <span>The fine print (optional)</span>
+          <input type="text" id="new-note" maxlength="120" placeholder="However you'd like it" aria-label="Coupon note">
+        </label>
+        <button class="button button-primary" id="add-coupon" type="button">Add to the book</button>
+      </div>
+      <p class="section-note" id="make-note" aria-live="polite"></p>
+    </section>
+
+    <section class="section" id="details">
+      <p class="eyebrow">JUST FOR US</p>
+      <h2>Details.</h2>
+      <div class="settings-actions">
+        <button class="button button-ghost" id="surprise-button" type="button">Surprise me</button>
+        <button class="button button-ghost" id="share-button" type="button">Share this page</button>
+        <button class="button button-ghost" id="reset-coupons" type="button">Back to the first book</button>
+      </div>
+      <p class="settings-note" id="save-note" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
